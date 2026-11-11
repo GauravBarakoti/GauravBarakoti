@@ -105,13 +105,13 @@ flowchart TB
 
 ---
 
-### 🚀 Client work
+### 🚀 Experience & client work
 
 | | | |
 |---|---|---|
 | 🟣 **[Optum](https://www.optum.com) · Dojo360** · 2024 – Present | Terraform development & **reusable Terraform modules** for the Dojo360 module | `Terraform` `IaC` |
-| 🟢 **[Dashboard Lim](https://dashboard-lim.com)** · 2024 – Present | DevOps & cloud infrastructure for dashboards, API automations & AI tools | `Cloud` `Automation` |
-| ✅ **[NewLIST](http://www.newlist.com)** · 2024 – 2025 | Test/stage/prod operations, Amazon Inspector remediation, CloudWatch everywhere | `Beanstalk` `CodePipeline` `WAF` `CloudFront` `RDS` |
+| 🟢 **[Dashboard Lim](https://dashboard-lim.com)** · Platform Admin · 2025 – Present | Platform admin for dashboards, API automations & AI tools: deployments, databases, IAM, n8n/Zapier | `Platform` `Automation` |
+| ✅ **[NewLIST](http://www.newlist.com)** · DevOps Engineer · Jun 2025 – Jan 2026 | Test/stage/prod operations, Amazon Inspector remediation, CloudWatch everywhere | `Beanstalk` `CodePipeline` `WAF` `CloudFront` `RDS` |
 | 🔵 **DigitalOcean → AWS** · 2026 | Led a production migration, scaling and memory-leak fixes at Shipway | `AWS` `DigitalOcean` `SRE` |
 | 🟢 **Westminiter** | ECR → ECS with lazy loading for a 4 GB image; Terraform for EC2, IAM, S3, SQS, Bedrock, RDS | `Terraform` `Docker` `ECS` |
 
