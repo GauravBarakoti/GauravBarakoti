@@ -32,23 +32,25 @@ observe:      [CloudWatch, Sentry, Elasticsearch, Slack alerts]
 ### 🏗️ How I wire a production app, end to end
 
 ```mermaid
-flowchart LR
-    U([👤 Users]) --> CDN[Cloudflare / CloudFront<br/>DNS · WAF · TLS]
+flowchart TB
+    U([👤 Users]) --> CDN[Cloudflare / CloudFront · DNS · WAF · TLS]
     CDN --> LB[ALB / ELB]
     subgraph VPC["🔒 AWS VPC · private subnets · security groups"]
-        LB --> FE[Frontend<br/>Vue · Next.js<br/>🐳 container]
-        FE -->|REST / API| BE[Backend API<br/>Node · Python · PHP · Java<br/>🐳 ECS / Railway / DO]
-        BE --> DB[(Databases<br/>RDS · PostgreSQL · MySQL<br/>MS SQL · MongoDB)]
-        BE --> R[(Redis cache)]
+        direction TB
+        LB --> FE[🖥️ Frontend · Vue / Next.js · 🐳 container]
+        FE -->|REST / API| BE[⚙️ Backend API · Node / Python / PHP / Java · 🐳 ECS · Railway · DO]
+        BE --> DB[(🗄️ RDS · PostgreSQL · MySQL · MS SQL · MongoDB)]
+        BE --> R[(⚡ Redis cache)]
     end
-    IAM{{AWS IAM<br/>roles · least-privilege policies}} -.-> BE
+    IAM{{🔐 AWS IAM · roles · least-privilege policies}} -.-> BE
     IAM -.-> DB
-    CI[CI/CD<br/>GitHub Actions · CircleCI · Jenkins] -->|docker build + push| ECR[(Amazon ECR)]
+    CI[🔁 CI/CD · GitHub Actions · CircleCI · Jenkins] -->|docker build + push| ECR[(📦 Amazon ECR)]
     ECR -->|zero-downtime deploy| BE
-    TF[Terraform + Ansible] -.->|provisions| VPC
-    BE --> AUTO[n8n · Zapier · Lambda<br/>automations]
-    AUTO --> SL[Slack / email]
-    BE --> MON[CloudWatch · Sentry] --> SL
+    TF[🧱 Terraform + Ansible] -.->|provisions| VPC
+    BE --> AUTO[🤖 n8n · Zapier · Lambda automations]
+    BE --> MON[📈 CloudWatch · Sentry]
+    AUTO --> SL[💬 Slack / email]
+    MON --> SL
 ```
 
 ---
